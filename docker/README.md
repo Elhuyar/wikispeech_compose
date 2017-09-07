@@ -14,7 +14,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
   
     sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-Linux-x86_64 -`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
-### II. Start using wikispeech
+### II. Setup Wikispeech
 
 1. Clone the wikispeech_compose repository
 
