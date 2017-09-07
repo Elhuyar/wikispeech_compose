@@ -33,6 +33,8 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 2. Setup standard lexicon data
 
    `$ docker-compose --file pronlex-import-all.yml up`
+   
+   This make take some time.
 
 
 3. Run wikispeech
