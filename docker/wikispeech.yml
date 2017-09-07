@@ -10,7 +10,6 @@ networks:
      - subnet: 172.99.0.0/16
 services:
   pronlex:
-    #build: ${GOPATH}/src/github.com/stts-se/pronlex
     build: https://github.com/stts-se/pronlex.git
     image: "pronlex"
     volumes:
@@ -21,7 +20,7 @@ services:
      app_net:
        ipv4_address: 172.99.0.2
   marytts:
-    build: ${WIKISPEECH_GIT}/docker/marytts
+    build: ${WIKISPEECH_COMPOSE_GIT}/docker/marytts
     image: "marytts"
     ports:
       - "59125:59125"
@@ -29,11 +28,11 @@ services:
      app_net:
        ipv4_address: 172.99.0.3
   wikispeech:
-    build: ${WIKISPEECH_GIT}/docker/wikispeech
+    build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
     volumes:
-     - ${WIKISPEECH_GIT}/docker/ws-config:/ws-config
-     - ${WIKISPEECH_GIT}/docker/compose/bin:/compose/bin
+     - ${WIKISPEECH_COMPOSE_GIT}/docker/ws-config:/ws-config
+     - ${WIKISPEECH_COMPOSE_GIT}/docker/compose/bin:/compose/bin
     ports:
      - "10000:10000"
     depends_on:
