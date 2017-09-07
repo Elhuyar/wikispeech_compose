@@ -18,7 +18,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 
 1. Clone the wikispeech_compose repository
 
-`$ git clone https://github.com/stts-se/wikispeech_compose.git`
+   `$ git clone https://github.com/stts-se/wikispeech_compose.git`
 
 2. Create environment variables
 
