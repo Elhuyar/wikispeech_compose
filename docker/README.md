@@ -16,16 +16,14 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 
 ### II. Clone the wikispeech_compose repository
 
-`$ mkdir -p ~/gitrepos`    
-`$ cd ~/gitrepos`   
 `$ git clone https://github.com/stts-se/wikispeech_compose.git`
 
 ### III. Start using wikispeech
 
 1. Create environment variables
 
-   `$ cd ~/gitrepos/stts-se/wikispeech_compose/docker`      
-   `$ cp TEMPLATE.env .env`     
+   `$ cd wikispeech_compose/docker`      
+   `wikispeech_compose$ cp TEMPLATE.env .env`     
    
    Edit the variables in the `.env` file to match your system settings.
 
