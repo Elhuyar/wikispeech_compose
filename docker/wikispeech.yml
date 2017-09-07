@@ -2,7 +2,7 @@
 
 version: '3'
 networks:
-  app_net:
+  wikispeech:
    driver: bridge
    ipam:
      driver: default
@@ -17,29 +17,29 @@ services:
     ports:
      - "8787:8787"
     networks:
-     app_net:
+     wikispeech:
        ipv4_address: 172.99.0.2
   marytts:
-    build: ${WIKISPEECH_COMPOSE_GIT}/docker/marytts
+    build: ${WIKISPEECH_COMPOSE_GIT}/marytts
     image: "marytts"
     ports:
       - "59125:59125"
     networks:
-     app_net:
+     wikispeech:
        ipv4_address: 172.99.0.3
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
     volumes:
      - ${WIKISPEECH_COMPOSE_GIT}/docker/ws-config:/ws-config
-     - ${WIKISPEECH_COMPOSE_GIT}/docker/compose/bin:/compose/bin
+     - ${WIKISPEECH_COMPOSE_GIT}/docker/bin:/docker/bin
     ports:
      - "10000:10000"
     depends_on:
       - pronlex
       - marytts
     networks:
-     app_net:
+     wikispeech:
        ipv4_address: 172.99.0.4
-    command: ["/compose/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]
-    #command: ["/compose/bin/debug", "${WIKISPEECH_GIT}"]
+    command: ["/docker/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]
+    #command: ["/docker/bin/debug", "${WIKISPEECH_COMPOSE_GIT}"]
