@@ -12,6 +12,7 @@ services:
   pronlex:
     build: https://github.com/stts-se/pronlex.git
     image: "pronlex"
+    #image: "sttsse/pronlex:version-0.2.1"
     volumes:
      - ${LEXDATA_DIR}:/go/appdir
     ports:
