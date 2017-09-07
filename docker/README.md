@@ -32,7 +32,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 
    `docker$ docker-compose --file pronlex-import-all.yml up`
    
-   This may take some time.
+   This will take some time.
 
 
 4. Run wikispeech
