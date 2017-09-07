@@ -16,7 +16,7 @@ RUN cp marytts/stts_voices/* marytts/build/install/marytts/lib/
 
 RUN cd marytts/build/install/marytts/lib/ && wget https://github.com/HaraldBerthelsen/voice-ar-nah-hsmm/releases/download/v5.2/voice-ar-nah-hsmm-5.2.jar
 
-RUN cd /tmp/ && wget https://github.com/HaraldBerthelsen/voice-stts_no_nst-hsmm/releases/download/v5.2/voice-stts_no_nst-hsmm-5.2.zip && unzip voice-stts_no_nst-hsmm-5.2.zip && cp lib/voice-stts_no_nst-hsmm-5.2.jar marytts/build/install/marytts/lib/
+RUN cd /tmp/ && wget https://github.com/HaraldBerthelsen/voice-stts_no_nst-hsmm/releases/download/v5.2/voice-stts_no_nst-hsmm-5.2.zip && unzip voice-stts_no_nst-hsmm-5.2.zip && cp lib/voice-stts_no_nst-hsmm-5.2.jar /marytts/build/install/marytts/lib/
 
 RUN echo "VOICES"
 
