@@ -23,27 +23,21 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 2. Create environment variables
 
    `$ cd wikispeech_compose/docker`      
-   `wikispeech_compose$ cp TEMPLATE.env .env`     
+   `docker$ cp TEMPLATE.env .env`     
    
    Edit the variables in the `.env` file to match your system settings.
 
 
 3. Setup standard lexicon data
 
-   `$ docker-compose --file pronlex-import-all.yml up`
+   `docker$ docker-compose --file pronlex-import-all.yml up`
    
    This may take some time.
 
 
 4. Run wikispeech
    
-   `$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
-
-   To specify a separate compose-file:   
-   `$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
-
-   Inspect the application:   
-   `$ docker-compose config`
+   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
 
 
    
