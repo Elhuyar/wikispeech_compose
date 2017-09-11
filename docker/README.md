@@ -12,7 +12,7 @@ Docker Compose Installation: https://docs.docker.com/compose/install/
 
 Sample installation command for Linux version 1.16.1 (latest version as of 2017-09-06):   
   
-    sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-Linux-x86_64 -`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-composex
 
 ### II. Setup Wikispeech
 
