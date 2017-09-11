@@ -7,6 +7,8 @@ Git folder: [docker/](https://github.com/stts-se/wikispeech_compose/tree/master/
 
 ## Used repositories
 
+The following git repositories will be used by the Docker compose application build:
+
 * [wikispeech_mockup](https://github.com/stts-se/wikispeech_mockup)
 * [pronlex](https://github.com/stts-se/pronlex)
 * [marytts](https://github.com/HaraldBerthelsen/marytts) (adapted clone)
