@@ -21,7 +21,8 @@ services:
      wikispeech:
        ipv4_address: 172.99.0.2
   marytts:
-    build: ${WIKISPEECH_COMPOSE_GIT}/marytts
+    #build: https://github.com/HaraldBerthelsen/marytts.git
+    build: https://github.com/HannaLindgren/marytts.git
     image: "marytts"
     ports:
       - "59125:59125"
