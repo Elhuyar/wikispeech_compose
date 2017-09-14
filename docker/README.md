@@ -1,4 +1,4 @@
-## Docker compose 
+## Complete installation using Docker Compose
 
 Utilities and info for building and running the Wikispeech server using [Docker Compose](https://docs.docker.com/compose/).
 
