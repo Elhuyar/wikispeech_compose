@@ -4,9 +4,15 @@ WORK IN PROGRESS
 
 Utilities and info for building and running the Wikispeech server using [Docker Compose](https://docs.docker.com/compose/).
 
-### I. Install Docker Compose
+### I. Install Docker CE
 
-_Requires Docker CE: https://docs.docker.com/engine/installation/_
+1. Install Docker CE for your OS: https://docs.docker.com/engine/installation/   
+   * Ubuntu installation: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
+
+2. Make sure you set all permissions and groups as specified in the installation instructions above. Log out and log in again.
+
+
+### II. Install Docker Compose
 
 Docker Compose Installation: https://docs.docker.com/compose/install/   
 
@@ -14,7 +20,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
   
     sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
-### II. Setup Wikispeech
+### III. Setup Wikispeech
 
 1. Clone the wikispeech_compose repository
 
