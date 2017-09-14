@@ -1,7 +1,5 @@
 ## Docker compose 
 
-WORK IN PROGRESS
-
 Utilities and info for building and running the Wikispeech server using [Docker Compose](https://docs.docker.com/compose/).
 
 ### I. Install Docker CE
