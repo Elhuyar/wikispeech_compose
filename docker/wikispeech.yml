@@ -30,7 +30,7 @@ services:
      wikispeech:
        ipv4_address: 172.99.0.3
   wikispeech:
-    # build: https://github.com/stts-se/wikispeech_mockup.git
+    build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
     ports:
      - "10000:10000"
