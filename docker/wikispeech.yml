@@ -30,11 +30,8 @@ services:
      wikispeech:
        ipv4_address: 172.99.0.3
   wikispeech:
-    build: https://github.com/stts-se/wikispeech_mockup.git
+    # build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
-    volumes:
-     - ${WIKISPEECH_COMPOSE_GIT}/docker/ws-config:/ws-config
-     - ${WIKISPEECH_COMPOSE_GIT}/docker/bin:/docker/bin
     ports:
      - "10000:10000"
     depends_on:
@@ -43,5 +40,4 @@ services:
     networks:
      wikispeech:
        ipv4_address: 172.99.0.4
-    command: ["/docker/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]
-    #command: ["/docker/bin/debug", "${WIKISPEECH_COMPOSE_GIT}"]
+    command: ["/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]
