@@ -1,0 +1,20 @@
+## docker-compose configuration for starting the wikispeech server
+
+version: '3'
+networks:
+  wikispeech:
+   driver: bridge
+   ipam:
+     driver: default
+     config:
+     - subnet: 172.99.0.0/16
+services:
+  marytts:
+    #build: https://github.com/HaraldBerthelsen/marytts.git
+    build: https://github.com/HannaLindgren/marytts.git
+    image: "marytts"
+    ports:
+      - "59125:59125"
+    networks:
+     wikispeech:
+       ipv4_address: 172.99.0.3
