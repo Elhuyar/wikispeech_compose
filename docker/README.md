@@ -46,7 +46,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
  ----
  
  The commands above will build required docker images (pronlex, marytts and wikispeech) only if needed. To for rebuild, add the 
-  ---build` switch`, for example:   
+  `---build` switch, for example:   
   
    `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit --build`
 
