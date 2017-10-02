@@ -29,10 +29,12 @@ services:
     networks:
      wikispeech:
        ipv4_address: 172.99.0.3
+  # wikispeech_base: https://github.com/stts-se/wikispeech_base.git
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
     volumes:
+      # for the workflow demo:
       - /var/www/html/audio:/wikispeech_mockup/wikispeech_server/tmp/
     ports:
      - "10000:10000"
