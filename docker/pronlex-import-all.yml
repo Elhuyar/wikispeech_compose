@@ -7,4 +7,4 @@ services:
     image: "pronlex"
     volumes:
      - ${LEXDATA_DIR}:/go/appdir
-    command: ["import_all", "${LEXDATA_DIR}", "/go/appdir"]
+    command: ["import_all", "/go/appdir", "${LEXDATA_DIR}"]
