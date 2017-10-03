@@ -9,6 +9,17 @@ networks:
      config:
      - subnet: 172.99.0.0/16
 services:
+  pronlex:
+    build: https://github.com/stts-se/pronlex.git
+    image: "pronlex"
+    #image: "sttsse/pronlex:version-0.2.1"
+    volumes:
+     - ${LEXDATA_DIR}:/go/appdir
+    ports:
+     - "8787:8787"
+    networks:
+     wikispeech:
+       ipv4_address: 172.99.0.2
   marytts:
     #build: https://github.com/HaraldBerthelsen/marytts.git
     build: https://github.com/HannaLindgren/marytts.git
