@@ -1,4 +1,4 @@
-## docker-compose configuration for starting the wikispeech server
+## docker-compose configuration for starting the wikispeech server with the workflow demo (not working)
 
 version: '3'
 networks:
@@ -14,12 +14,14 @@ services:
     image: "pronlex"
     #image: "sttsse/pronlex:version-0.2.1"
     volumes:
-     - ${LEXDATA_DIR}:/go/appdir
+     - ${LEXDATA_DIR}:/appdir
     ports:
      - "8787:8787"
     networks:
      wikispeech:
        ipv4_address: 172.99.0.2
+    extra_hosts:
+     - "localhost:172.99.0.1"
   marytts:
     #build: https://github.com/HaraldBerthelsen/marytts.git
     build: https://github.com/HannaLindgren/marytts.git
@@ -29,6 +31,8 @@ services:
     networks:
      wikispeech:
        ipv4_address: 172.99.0.3
+    extra_hosts:
+     - "localhost:172.99.0.1"
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
@@ -43,4 +47,6 @@ services:
     networks:
      wikispeech:
        ipv4_address: 172.99.0.4
+    extra_hosts:
+     - "localhost:172.99.0.1"
     command: ["/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]

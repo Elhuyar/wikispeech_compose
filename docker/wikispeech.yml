@@ -14,7 +14,7 @@ services:
     image: "pronlex"
     #image: "sttsse/pronlex:version-0.2.1"
     volumes:
-     - ${LEXDATA_DIR}:/go/appdir
+     - ${LEXDATA_DIR}:/appdir
     ports:
      - "8787:8787"
     networks:

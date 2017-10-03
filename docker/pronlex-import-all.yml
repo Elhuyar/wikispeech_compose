@@ -6,5 +6,5 @@ services:
     build: https://github.com/stts-se/pronlex.git
     image: "pronlex"
     volumes:
-     - ${LEXDATA_DIR}:/go/appdir
+     - ${LEXDATA_DIR}:/appdir
     command: ["import_all", "/go/appdir", "${LEXDATA_DIR}"]
