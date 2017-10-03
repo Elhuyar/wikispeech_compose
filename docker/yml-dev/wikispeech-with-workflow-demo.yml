@@ -7,7 +7,7 @@ networks:
    ipam:
      driver: default
      config:
-     - subnet: 172.99.0.0/16
+     - subnet: 172.98.0.0/16
 services:
   pronlex:
     build: https://github.com/stts-se/pronlex.git
@@ -19,9 +19,9 @@ services:
      - "8787:8787"
     networks:
      wikispeech:
-       ipv4_address: 172.99.0.2
+       ipv4_address: 172.98.0.2
     extra_hosts:
-     - "localhost:172.99.0.1"
+     - "localhost:172.98.0.1"
   marytts:
     #build: https://github.com/HaraldBerthelsen/marytts.git
     build: https://github.com/HannaLindgren/marytts.git
@@ -30,9 +30,9 @@ services:
       - "59125:59125"
     networks:
      wikispeech:
-       ipv4_address: 172.99.0.3
+       ipv4_address: 172.98.0.3
     extra_hosts:
-     - "localhost:172.99.0.1"
+     - "localhost:172.98.0.1"
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
@@ -46,7 +46,7 @@ services:
       - marytts
     networks:
      wikispeech:
-       ipv4_address: 172.99.0.4
+       ipv4_address: 172.98.0.4
     extra_hosts:
-     - "localhost:172.99.0.1"
-    command: ["/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]
+     - "localhost:172.98.0.1"
+    command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125"]

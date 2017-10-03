@@ -46,4 +46,4 @@ services:
        ipv4_address: 172.99.0.4
     extra_hosts:
      - "localhost:172.99.0.1"
-    command: ["/bin/ws-postponed-start", "172.99.0.1:8787", "172.99.0.1:59125"]
+    command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125"]
