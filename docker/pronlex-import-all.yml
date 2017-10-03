@@ -7,6 +7,4 @@ services:
     image: "pronlex"
     volumes:
      - ${LEXDATA_DIR}:/go/appdir
-    #ports:
-    # - "8787:8787"
     command: ["import_all", "${LEXDATA_DIR}", "/go/appdir"]
