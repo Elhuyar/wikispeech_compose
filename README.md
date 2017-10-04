@@ -1,5 +1,7 @@
 Docker compose for the wikispeech server.
 
+<!-- [![Build Status](https://travis-ci.org/stts-se/wikispeech_compose.svg?branch=master)](https://travis-ci.org/stts-se/wikispeech_compose)-->
+
 ## Docker compose instructions
 
 Readme: docker/README.md    
