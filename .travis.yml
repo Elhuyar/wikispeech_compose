@@ -50,3 +50,6 @@ before_install:
   
   script:
   - cd docker && docker-compose --file wikispeech.yml start
+
+
+# test travis-file: http://lint.travis-ci.org/
