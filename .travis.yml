@@ -9,4 +9,5 @@ before_install:
  # - docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex import_for_ws_tests
  # - docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex 
 
-
+script:
+ - echo "NO SCRIPTS IMPLEMENTED YET"
