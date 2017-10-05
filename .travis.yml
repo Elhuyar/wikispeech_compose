@@ -7,7 +7,7 @@ before_script:
  
 script:
  - cd docker
- - cp /.travis/docker-compose.env .env
+ - cp ../.travis/docker-compose.env .env
  - /bin/docker-compose --file wikispeech.yml build
  - /bin/docker-compose --file wikispeech.yml create
  - /bin/docker-compose --file pronlex-import-for-ws-tests.yml up 
@@ -15,5 +15,5 @@ script:
  - export pid=$!
  - echo "wikispeech server running on pid $pid"
  - sleep 30
- - /.travis/exit_server_and_fail_if_not_running.sh wikispeech $pid
+ - sh ../.travis/exit_server_and_fail_if_not_running.sh wikispeech $pid
  # - /bin/docker-compose --file wikispeech.yml down
