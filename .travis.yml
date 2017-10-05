@@ -2,7 +2,10 @@ services:
  - docker
  
 before_script:
+ # fail on any non-zero exit value
  - set -e
+ 
+ # install docker-compose
  - sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /bin/docker-compose
  - sudo chmod +x /bin/docker-compose
  
@@ -17,4 +20,3 @@ script:
  - echo "wikispeech server running on pid $pid"
  - sleep 30
  - sh ../.travis/exit_server_and_fail_if_not_running.sh wikispeech $pid
- # - /bin/docker-compose --file wikispeech.yml down
