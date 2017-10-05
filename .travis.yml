@@ -7,6 +7,7 @@ before_script:
  
 script:
  - cd docker
+ - cp travis.env .env
  - /bin/docker-compose --file wikispeech.yml up --abort-on-container-exit &
  - sleep 20
  - echo "NO TESTS IMPLEMENTED YET => FAIL FOR NOW" && exit 1
