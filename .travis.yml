@@ -8,6 +8,7 @@ before_script:
 script:
  - cd docker
  - cp travis.env .env
- - /bin/docker-compose --file wikispeech.yml up --abort-on-container-exit &
+ - /bin/docker-compose --file pronlex-import-for-ws-tests.yml start &
+ - /bin/docker-compose --file wikispeech.yml start --abort-on-container-exit &
  - sleep 20
  - echo "TRAVIS TESTS ARE NOT COMPLETED => WILL ALWAYS FAIL FOR NOW" && exit 1
