@@ -36,8 +36,8 @@ services:
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
-    #volumes:
-      # for the workflow demo:
+    # volumes:
+      # ## for the workflow demo?
       # - /var/www/html/audio:/wikispeech_mockup/wikispeech_server/tmp/
     ports:
      - "10000:10000"
