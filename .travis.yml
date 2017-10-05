@@ -7,7 +7,7 @@ before_script:
  
 script:
  - cd docker
- - cp travis.env .env
+ - cp /.travis/docker-compose.env .env
  - /bin/docker-compose --file wikispeech.yml build
  - /bin/docker-compose --file wikispeech.yml create
  - /bin/docker-compose --file pronlex-import-for-ws-tests.yml up 
