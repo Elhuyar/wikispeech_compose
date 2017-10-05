@@ -1,13 +1,10 @@
 services:
  - docker
-
-before_install:
- #- docker build https://github.com/stts-se/pronlex.git -t pronlex
- #- docker build https://github.com/stts-se/wikispeech_mockup.git -t wikispeech
- #- docker build https://github.com/HannaLindgren/marytts.git -t marytts
- #- docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex setup
- #- docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex import_for_ws_test
- #- docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex 
-
+ 
+before_script:
+ - sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /bin/docker-compose
+ 
 script:
+ - cd docker
+ - /bin/docker-compose --file wikispeech.yml up &
  - echo "NO TESTS IMPLEMENTED YET => FAIL FOR NOW" && exit 1
