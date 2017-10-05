@@ -16,7 +16,4 @@ script:
  - echo "wikispeech server running on pid $pid"
  - sleep 60
  - docker/exit_server_and_fail_if_not_running.sh wikispeech $pid
-
- #- /bin/docker-compose --file wikispeech.yml down
- 
- # - echo "TRAVIS TESTS ARE NOT COMPLETED => WILL ALWAYS FAIL FOR NOW" && exit 1
+ # - /bin/docker-compose --file wikispeech.yml down
