@@ -2,12 +2,12 @@ services:
  - docker
 
 before_install:
- - docker build https://github.com/stts-se/pronlex.git -t pronlex
- - docker build https://github.com/stts-se/wikispeech_mockup.git -t wikispeech
- - docker build https://github.com/HannaLindgren/marytts.git -t marytts
- # - docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex setup
- # - docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex import_for_ws_test
- # - docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex 
+ #- docker build https://github.com/stts-se/pronlex.git -t pronlex
+ #- docker build https://github.com/stts-se/wikispeech_mockup.git -t wikispeech
+ #- docker build https://github.com/HannaLindgren/marytts.git -t marytts
+ #- docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex setup
+ #- docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex import_for_ws_test
+ #- docker run -v /tmp/appdir:/appdir -p 8787:8787 -it pronlex 
 
 script:
- - echo "NO TESTS IMPLEMENTED YET" && exit 1
+ - echo "NO TESTS IMPLEMENTED YET => FAIL FOR NOW" && exit 1
