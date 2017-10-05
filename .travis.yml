@@ -3,9 +3,10 @@ services:
  
 before_script:
  - sudo -i curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /bin/docker-compose
- - chmod +x /bin/docker-compose
+ - sudo chmod +x /bin/docker-compose
  
 script:
  - cd docker
- - /bin/docker-compose --file wikispeech.yml up &
+ - /bin/docker-compose --file wikispeech.yml up --abort-on-container-exit &
+ - sleep 20
  - echo "NO TESTS IMPLEMENTED YET => FAIL FOR NOW" && exit 1
