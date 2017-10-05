@@ -8,6 +8,7 @@ before_script:
 script:
  - cd docker
  - cp travis.env .env
+ - /bin/docker-compose --file wikispeech.yml build
  - /bin/docker-compose --file pronlex-import-for-ws-tests.yml up 
  - /bin/docker-compose --file wikispeech.yml up --abort-on-container-exit
  # - sleep 20
