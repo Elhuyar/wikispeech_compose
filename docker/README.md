@@ -32,7 +32,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
    Edit the variables in the `.env` file to match your system settings.
 
 
-3. Setup standard lexicon data
+3. Setup standard lexicon data (optional)
 
    `docker$ docker-compose --file pronlex-import-all.yml up`
    
