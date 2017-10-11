@@ -17,5 +17,5 @@ script:
  - /bin/docker-compose --file wikispeech.yml up --abort-on-container-exit &
  - export pid=$!
  - echo "wikispeech server running on pid $pid"
- - sleep 30
+ - sleep 300
  - sh ../.travis/exit_server_and_fail_if_not_running.sh wikispeech $pid
