@@ -3,14 +3,17 @@ CMD=`basename $0`
 if [ $# -eq 0 ]; then
     echo "Usage:" 2>&1
     echo "  $ $CMD <container-name(s)> - removed named containers (matching substrings)" 2>&1
-    echo "  $ $CMD l(ist) - list active containers" 2>&1
+    echo "  $ $CMD l(ist) - list containers" 2>&1
+    echo "  $ $CMD i(d) - list container ids" 2>&1
+    echo "  $ $CMD n(ames) - list container names" 2>&1
     exit 0
-elif [ $# -eq 1 ] && [ $1 == "list" ]; then
+elif [ $# -eq 1 ] && [ \( $1 == "list" \) -o \( $1 == "l" \) ]; then
     echo "[$CMD] Available containers:" 2>&1
     docker ps -a 2>&1
-elif [ $# -eq 1 ] && [ $1 == "l" ]; then
-    echo "[$CMD] Available containers:" 2>&1
-    docker ps -a 2>&1
+elif [ $# -eq 1 ] && [ \( $1 == "ids" \) -o  \( $1 == "id" \) -o \( $1 == "i" \) ]; then
+    docker ps -a | sed 's/   */\t/'g | cut -f1 | egrep -v "^CONTAINER ID$" 2>&1
+elif [ $# -eq 1 ] && [ \( $1 == "names" \) -o \( $1 == "n" \) ]; then
+    docker ps -a | sed 's/   */\t/'g | cut -f7 | egrep -v "^NAMES$" 2>&1
 else
     for arg in $* ; do
 	if [ "$arg" == "all" ]; then
