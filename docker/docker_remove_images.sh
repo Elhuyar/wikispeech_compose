@@ -3,7 +3,6 @@ CMD=`basename $0`
 if [ $# -eq 0 ]; then
     echo "Usage:" 2>&1
     echo "  $ $CMD <image-name(s)> - remove named images (matching substrings)" 2>&1
-    echo "  $ $CMD all - remove all images" 2>&1
     echo "  $ $CMD l(ist) - list images" 2>&1
     echo "  $ $CMD i(d) - list image ids" 2>&1
     echo "  $ $CMD n(ames) - list image names" 2>&1
