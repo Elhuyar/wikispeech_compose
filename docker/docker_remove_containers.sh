@@ -34,6 +34,9 @@ else
 		    exit 1
 		fi
 	    done
+	elif [ ${#arg} -lt 4 ]; then
+	    echo "[$CMD] Container name/substring needs be specified with three or more characters"
+	    exit 1
 	else
 	    nFound=`docker ps -a | egrep -c "$arg"`
 	    if [ $nFound -eq 0 ]; then
