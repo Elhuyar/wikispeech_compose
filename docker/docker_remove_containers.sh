@@ -3,7 +3,7 @@ CMD=`basename $0`
 if [ $# -eq 0 ]; then
     echo "Usage:" 2>&1
     echo "  $ $CMD <container-name(s)> - remove named containers (matching substrings)" 2>&1
-    echo "  $ $CMD all - removed all containers" 2>&1
+    echo "  $ $CMD all - remove all containers" 2>&1
     echo "  $ $CMD l(ist) - list containers" 2>&1
     echo "  $ $CMD i(d) - list container ids" 2>&1
     echo "  $ $CMD n(ames) - list container names" 2>&1
@@ -18,7 +18,7 @@ elif [ $# -eq 1 ] && [ \( $1 == "names" \) -o \( $1 == "n" \) ]; then
 else
     for arg in $* ; do
 	if [ "$arg" == "all" ]; then
-	    nFound=`docker ps -a |egrep -c "^CONTAINER ID"`
+	    nFound=`docker ps -a |egrep -cv "^CONTAINER ID"`
 	    if [ $nFound -eq 0 ]; then
 		echo "[$CMD] No containers available for removal!" 2>&1
 		exit 1    
