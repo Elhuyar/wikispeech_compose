@@ -2,7 +2,7 @@ CMD=`basename $0`
 
 if [ $# -eq 0 ]; then
     echo "Usage:" 2>&1
-    echo "  $ $CMD <container-name(s)> - removed named containers (matching substrings)" 2>&1
+    echo "  $ $CMD <container-name(s)> - remove named containers (matching substrings)" 2>&1
     echo "  $ $CMD all - removed all containers" 2>&1
     echo "  $ $CMD l(ist) - list containers" 2>&1
     echo "  $ $CMD i(d) - list container ids" 2>&1
