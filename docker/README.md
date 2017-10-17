@@ -34,18 +34,28 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
    Edit the variables in the `.env` file to match your system settings.
 
 
-3. Setup standard lexicon data (optional)
-
-   `docker$ docker-compose --file pronlex-import-all.yml up`
-   
-   This will take some time.
-
-
-4. Run wikispeech
+3. Run wikispeech
    
    `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
  
    If all components are started successfully, Wikispeech should be up and running on http://localhost:10000/. You can verify that it's working by visiting http://localhost:10000/wikispeech using your browser. Please note that your browser must support .opus audio files.
+   
+   
+4. Setup standard lexicon data (optional)
+
+   Shutdown the wikispeech server if it's running:   
+   `docker$ docker-compose --file pronlex-import-all.yml down`
+   
+   Import (this will take some time):    
+   `docker$ docker-compose --file pronlex-import-all.yml up`
+   
+   Start server:   
+   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
+   
+
+
+
+
 
 ----
  
