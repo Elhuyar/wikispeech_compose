@@ -3,7 +3,7 @@ CMD=`basename $0`
 if [ $# -eq 0 ]; then
     echo "Usage:" 2>&1
     echo "  $ $CMD <container-name(s)> - removed named containers (matching substrings)" 2>&1
-    echo "  $ $CMD list - list active containers" 2>&1
+    echo "  $ $CMD l(ist) - list active containers" 2>&1
     exit 0
 elif [ $# -eq 1 ] && [ $1 == "list" ]; then
     echo "[$CMD] Available containers:" 2>&1

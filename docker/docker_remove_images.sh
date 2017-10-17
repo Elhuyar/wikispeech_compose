@@ -3,7 +3,7 @@ CMD=`basename $0`
 if [ $# -eq 0 ]; then
     echo "Usage:" 2>&1
     echo "  $ $CMD <image-name(s)> - removed named images (matching substrings)" 2>&1
-    echo "  $ $CMD list - list all images" 2>&1
+    echo "  $ $CMD l(ist) - list all images" 2>&1
     exit 0
 elif [ $# -eq 1 ] && [ $1 == "list" ]; then
     echo "[$CMD] Available images:" 2>&1
