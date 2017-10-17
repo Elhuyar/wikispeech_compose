@@ -44,7 +44,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 4. Setup standard lexicon data (optional)
 
    Shutdown the wikispeech server if it's running:   
-   `docker$ docker-compose --file pronlex-import-all.yml down`
+   `docker$ docker-compose --file wikispeech.yml down`
    
    Import (this will take some time):    
    `docker$ docker-compose --file pronlex-import-all.yml up`
