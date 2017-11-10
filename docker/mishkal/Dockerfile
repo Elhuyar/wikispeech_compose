@@ -4,7 +4,8 @@ WORKDIR "/"
 
 
 ## INSTALL MISHKAL
-RUN git clone https://github.com/linuxscout/mishkal.git
+# RUN git clone https://github.com/linuxscout/mishkal.git
+RUN git clone https://github.com/HaraldBerthelsen/mishkal.git
 
 WORKDIR "mishkal"
 #RUN fgrep "self.display(word, format_display)]" mishkal/tashkeel/tashkeel.py
