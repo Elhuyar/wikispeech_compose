@@ -22,19 +22,18 @@ services:
        ipv4_address: 172.91.0.2
     extra_hosts:
      - "localhost:172.91.0.1"
-  marytts:
-    #build: https://github.com/HaraldBerthelsen/marytts.git
-    build: https://github.com/HannaLindgren/marytts.git
-    image: "marytts"
-    ports:
-      - "59125:59125"
-    depends_on:
-     - mishkal
-    networks:
-     wikispeech:
-       ipv4_address: 172.91.0.3
-    extra_hosts:
-     - "localhost:172.91.0.1"
+  # marytts:
+  #   build: https://github.com/HannaLindgren/marytts.git
+  #   image: "marytts"
+  #   ports:
+  #     - "59125:59125"
+  #   depends_on:
+  #    - mishkal
+  #   networks:
+  #    wikispeech:
+  #      ipv4_address: 172.91.0.3
+  #   extra_hosts:
+  #    - "localhost:172.91.0.1"
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
@@ -42,16 +41,16 @@ services:
      - "10000:10000"
     depends_on:
       - pronlex
-      - marytts
+      - marytts_mishkal
     networks:
      wikispeech:
        ipv4_address: 172.91.0.4
     extra_hosts:
      - "localhost:172.91.0.1"
     command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125"]
-  mishkal:
+  marytts_mishkal:
     build: .
-    image: "mishkal"
+    image: "marytts_mishkal"
     ports:
      - "8080:8080"
     networks:
