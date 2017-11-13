@@ -1,7 +1,7 @@
 # Download sttsse/wikispeech_base from hub.docker.com | source repository: https://github.com/stts-se/wikispeech_base.git
 # FROM sttsse/wikispeech_base
 
-FROM marytts
+FROM marytts_core
 
 WORKDIR "/"
 

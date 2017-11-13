@@ -1,17 +1,14 @@
-## docker-compose configuration for starting the wikispeech server with mishkal (work in progress)
+## docker-compose configuration for starting the wikispeech server
 
 version: '3'
-
 networks:
   wikispeech:
    driver: bridge
    ipam:
      driver: default
      config:
-     - subnet: 172.91.0.0/16
-
+     - subnet: 172.99.0.0/16
 services:
-
   pronlex:
     build: https://github.com/stts-se/pronlex.git
     image: "pronlex"
@@ -22,25 +19,25 @@ services:
      - "8787:8787"
     networks:
      wikispeech:
-       ipv4_address: 172.91.0.2
+       ipv4_address: 172.99.0.2
     extra_hosts:
-     - "localhost:172.91.0.1"
-
-  # marytts core libraries
-  marytts_core:
+     - "localhost:172.99.0.1"
+  marytts:
     build: https://github.com/HaraldBerthelsen/marytts.git
-    image: "marytts_core"
-    #ports:
-    #  - "59125:59125"
+    image: "marytts"
+    ports:
+      - "59125:59125"
     networks:
      wikispeech:
-       ipv4_address: 172.91.0.3
+       ipv4_address: 172.99.0.3
     extra_hosts:
-     - "localhost:172.91.0.1"
-
+     - "localhost:172.99.0.1"
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
     image: "wikispeech"
+    # volumes:
+      # ## for the workflow demo?
+      # - /var/www/html/audio:/wikispeech_mockup/wikispeech_server/tmp/
     ports:
      - "10000:10000"
     depends_on:
@@ -48,19 +45,7 @@ services:
       - marytts
     networks:
      wikispeech:
-       ipv4_address: 172.91.0.4
+       ipv4_address: 172.99.0.4
     extra_hosts:
-     - "localhost:172.91.0.1"
+     - "localhost:172.99.0.1"
     command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125"]
-
-  # marytts with mishkal
-  marytts: 
-    build: mishkal
-    image: "marytts"
-    ports:
-     - "59125:59125"
-    networks:
-     wikispeech:
-       ipv4_address: 172.91.0.5
-    extra_hosts:
-     - "localhost:172.91.0.1"
