@@ -36,7 +36,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 
 3. Run wikispeech
    
-   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
+   `docker$ docker-compose --file wikispeech.yml up`
  
    If all components are started successfully, Wikispeech should be up and running on http://localhost:10000/. You can verify that it's working by visiting http://localhost:10000/wikispeech using your browser. Please note that your browser must support .opus audio files.
    
@@ -50,7 +50,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
    `docker$ docker-compose --file pronlex-import-all.yml up`
    
    Start server:   
-   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
+   `docker$ docker-compose --file wikispeech.yml up`
    
 
 
