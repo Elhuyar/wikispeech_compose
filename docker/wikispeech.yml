@@ -26,12 +26,11 @@ services:
     extra_hosts:
      - "localhost:172.91.0.1"
 
-  # marytts core libraries
-  marytts_core:
+  marytts:
     build: https://github.com/HaraldBerthelsen/marytts.git
     image: "marytts_core"
-    #ports:
-    #  - "59125:59125"
+    ports:
+      - "59125:59125"
     networks:
      wikispeech:
        ipv4_address: 172.91.0.3
@@ -53,14 +52,3 @@ services:
      - "localhost:172.91.0.1"
     command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125"]
 
-  # marytts with mishkal
-  marytts: 
-    build: mishkal
-    image: "marytts"
-    ports:
-     - "59125:59125"
-    networks:
-     wikispeech:
-       ipv4_address: 172.91.0.5
-    extra_hosts:
-     - "localhost:172.91.0.1"
