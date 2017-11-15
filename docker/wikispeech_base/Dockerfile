@@ -36,3 +36,4 @@ RUN apt-get install -y python
 # JAVA 8
 RUN apt-get install -y software-properties-common && add-apt-repository ppa:openjdk && apt-get install -y openjdk-8-jdk
 
+WORKDIR "/"
