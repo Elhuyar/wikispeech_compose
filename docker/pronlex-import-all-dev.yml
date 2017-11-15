@@ -3,7 +3,8 @@
 version: '3'
 services:
   pronlex:
-    image: "sttsse/pronlex:$RELEASE"
+    build: https://github.com/stts-se/pronlex.git
+    image: "pronlex"
     volumes:
      - ${LEXDATA_DIR}:/appdir
     command: ["import_all", "/appdir", "${LEXDATA_DIR}"]
