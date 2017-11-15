@@ -65,10 +65,10 @@ The setup here will use Docker images released on [Docker Hub](https://hub.docke
    Start server:   
    `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
    
-   Import lexicon data:
+   Import lexicon data:   
    `docker$ docker-compose --file pronlex-import-all.yml up`
    
-   Re-build Docker images (if needed):
+   Re-build Docker images (if needed):   
    `docker$ docker-compose --file wikispeech-dev.yml up --abort-on-container-exit --build`
 
 
