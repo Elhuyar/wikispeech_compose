@@ -32,7 +32,7 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
    `$ cd wikispeech_compose/docker`      
    `docker$ cp TEMPLATE.env .env`     
    
-   Edit the variables in the `.env` file to match your system settings.
+   Edit the variables in the `.env` file to match your desired settings.
 
 
 3. Run wikispeech
@@ -60,9 +60,19 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 
 ----
  
- The commands above will build required docker images (pronlex, marytts and wikispeech) only if needed. To rebuild, add the 
-  `---build` switch, for example:   
-  
-   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit --build`
+ 
+ Developers who build their own images (rather than using readymade images available on docker hub) should use the `yml` files named `*-dev.yml`: `wikispeech-dev.yml` and `pronlex-import-all-dev.yml`:
+ 
+ Shutdown the wikispeech server if it's running:   
+   `docker$ docker-compose --file wikispeech.yml down`
+   
+   Import (this will take some time):    
+   `docker$ docker-compose --file pronlex-import-all.yml up`
+   
+   Start server:   
+   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
+   
+   Re-build Docker images:
+   `docker$ docker-compose --file wikispeech-dev.yml up --abort-on-container-exit --build`
 
 
