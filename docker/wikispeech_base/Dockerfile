@@ -19,7 +19,7 @@ RUN apt-get install -y git
 
 ####### WIKISPEECH SERVER/MOCKUP DEPS
 RUN apt-get install -y opus-tools python3-pip netcat
-RUN pip3 install pytz simplejson requests flask flask_cors
+RUN pip3 install simplejson requests flask flask_cors pytz tzlocal
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
