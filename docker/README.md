@@ -23,6 +23,8 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
 
 ### III. Setup Wikispeech
 
+The setup here will use Docker images released on [Docker Hub](https://hub.docker.com/u/sttsse/).
+
 1. Clone the `wikispeech_compose` repository
 
    `$ git clone https://github.com/stts-se/wikispeech_compose.git`
@@ -54,25 +56,19 @@ Sample installation command for Linux version 1.16.1 (latest version as of 2017-
    `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
    
 
+---
 
-
-
-
-----
+### For developers
  
- 
- Developers who build their own images (rather than using readymade images available on docker hub) should use the `yml` files named `*-dev.yml`: `wikispeech-dev.yml` and `pronlex-import-all-dev.yml`:
- 
- Shutdown the wikispeech server if it's running:   
-   `docker$ docker-compose --file wikispeech.yml down`
-   
-   Import (this will take some time):    
-   `docker$ docker-compose --file pronlex-import-all.yml up`
+ Developers who build their own Docker images should use the files named `*-dev.yml` instead: `wikispeech-dev.yml` and `pronlex-import-all-dev.yml`:
    
    Start server:   
    `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
    
-   Re-build Docker images:
+   Import lexicon data:
+   `docker$ docker-compose --file pronlex-import-all.yml up`
+   
+   Re-build Docker images (if needed):
    `docker$ docker-compose --file wikispeech-dev.yml up --abort-on-container-exit --build`
 
 
