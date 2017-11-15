@@ -6,6 +6,7 @@ Utilities and info for building and running the Wikispeech server using [Docker 
 
 1. Install Docker CE for your OS: https://docs.docker.com/engine/installation/   
    * Ubuntu installation: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
+   * Debian installation: https://docs.docker.com/engine/installation/linux/docker-ce/debian/
 
 2. If you're on Linux, make sure you set all permissions and groups as specified in the post-installation instructions: https://docs.docker.com/engine/installation/linux/linux-postinstall/ 
 
