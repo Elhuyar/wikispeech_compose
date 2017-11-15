@@ -28,7 +28,7 @@ services:
 
   marytts:
     build: https://github.com/HaraldBerthelsen/marytts.git
-    image: "marytts_core"
+    image: "marytts"
     ports:
       - "59125:59125"
     networks:
