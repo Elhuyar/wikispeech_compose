@@ -36,4 +36,12 @@ RUN apt-get install -y python
 # JAVA 8
 RUN apt-get install -y software-properties-common && add-apt-repository ppa:openjdk && apt-get install -y openjdk-8-jdk
 
+
+###### BUILD INFO
+RUN echo -n "Build timestamp: " > /var/.wikispeech_base_build_info.txt
+RUN date --utc "+%Y-%m-%d %H:%M:%S %Z" >> /var/.wikispeech_base_build_info.txt
+RUN echo "Built by: docker" >> /var/.wikispeech_base_build_info.txt
+RUN echo "Application name: marytts"  >> /var/.wikispeech_base_build_info.txt
+
+
 WORKDIR "/"
