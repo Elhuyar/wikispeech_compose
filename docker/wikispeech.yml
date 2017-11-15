@@ -13,9 +13,8 @@ networks:
 services:
 
   pronlex:
-    build: https://github.com/stts-se/pronlex.git
-    image: "pronlex"
-    #image: "sttsse/pronlex:version-0.2.1"
+    # build: https://github.com/stts-se/pronlex.git
+    image: "sttsse/pronlex:$RELEASE"
     volumes:
      - ${LEXDATA_DIR}:/appdir
     ports:
@@ -27,8 +26,8 @@ services:
      - "localhost:172.91.0.1"
 
   marytts:
-    build: https://github.com/HaraldBerthelsen/marytts.git
-    image: "marytts"
+    # build: https://github.com/HaraldBerthelsen/marytts.git
+    image: "sttsse/marytts:$RELEASE"
     ports:
       - "59125:59125"
     networks:
@@ -38,8 +37,8 @@ services:
      - "localhost:172.91.0.1"
 
   wikispeech:
-    build: https://github.com/stts-se/wikispeech_mockup.git
-    image: "wikispeech"
+    # build: https://github.com/stts-se/wikispeech_mockup.git
+    image: "sttsse/wikispeech:$RELEASE"
     ports:
      - "10000:10000"
     depends_on:
