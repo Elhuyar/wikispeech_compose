@@ -55,8 +55,8 @@ The setup here will use Docker images released on [Docker Hub](https://hub.docke
    Start server:   
    `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
    
-5. Start server and fetch updated images from Docker Hub
-   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit pull`
+5. Fetch updated images from Docker Hub (for the release tag speficied in `.env`)
+   `docker$ docker-compose --file wikispeech.yml pull`
 
 
 ---
