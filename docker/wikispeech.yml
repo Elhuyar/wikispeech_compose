@@ -1,4 +1,4 @@
-## docker-compose configuration for starting the wikispeech server with mishkal (work in progress)
+## docker-compose configuration for starting the wikispeech server with a release publish on Docker Hub
 
 version: '3'
 
