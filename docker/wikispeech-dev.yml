@@ -52,5 +52,5 @@ services:
        ipv4_address: 172.91.0.4
     extra_hosts:
      - "localhost:172.91.0.1"
-    command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125", "${AUDIO_URL_PREFIX}"]
+    command: ["/bin/ws-postponed-start", "localhost:8787", "localhost:59125", "${EXTERNAL_HOST}:10000"]
 
