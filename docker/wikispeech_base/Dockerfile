@@ -37,11 +37,17 @@ RUN apt-get install -y python
 RUN apt-get install -y software-properties-common && add-apt-repository ppa:openjdk && apt-get install -y openjdk-8-jdk
 
 
+####### PATHS
+RUN mkdir -p /wikispeech
+RUN mkdir -p /wikispeech/bin
+#RUN export PATH=/wikispeech/bin:$PATH # doesn't work
+
+
 ###### BUILD INFO
-RUN echo -n "Build timestamp: " > /var/.wikispeech_base_build_info.txt
-RUN date --utc "+%Y-%m-%d %H:%M:%S %Z" >> /var/.wikispeech_base_build_info.txt
-RUN echo "Built by: docker" >> /var/.wikispeech_base_build_info.txt
-RUN echo "Application name: marytts"  >> /var/.wikispeech_base_build_info.txt
+RUN echo -n "Build timestamp: " > /wikispeech/.wikispeech_base_build_info.txt
+RUN date --utc "+%Y-%m-%d %H:%M:%S %Z" >> /wikispeech/.wikispeech_base_build_info.txt
+RUN echo "Built by: docker" >> /wikispeech/.wikispeech_base_build_info.txt
+RUN echo "Application name: marytts"  >> /wikispeech/.wikispeech_base_build_info.txt
 
 
 WORKDIR "/"

@@ -7,4 +7,4 @@ services:
     image: "pronlex"
     volumes:
      - ${LEXDATA_DIR}:/appdir
-    command: ["import_all", "/appdir", "${LEXDATA_DIR}"]
+    command: ["/wikispeech/bin/import_all", "/appdir", "${LEXDATA_DIR}"]
