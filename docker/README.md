@@ -67,10 +67,10 @@ The setup here will use Docker images released on [Docker Hub](https://hub.docke
  Developers who build their own Docker images should use the files named `*-dev.yml` instead: `wikispeech-dev.yml` and `pronlex-import-all-dev.yml`:
    
    Start server:   
-   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
+   `docker$ docker-compose --file wikispeech-dev.yml up --abort-on-container-exit`
    
    Import standard lexicon data (optional):   
-   `docker$ docker-compose --file pronlex-import-all.yml up`
+   `docker$ docker-compose --file pronlex-import-all-dev.yml up`
    
    Re-build Docker images (if needed):   
    `docker$ docker-compose --file wikispeech-dev.yml up --abort-on-container-exit --build`
