@@ -3,6 +3,9 @@
 # STARTING FROM THE OFFICIAL GOLANG IMAGE (required by pronlex)
 FROM golang
 
+# META/LABELS
+LABEL "se.stts.vendor"="STTS - Speech technology services - http://stts.se"
+
 # SET UP APT
 RUN apt-get update -y && apt-get upgrade -y && apt-get install apt-utils -y 
 
@@ -44,10 +47,14 @@ RUN mkdir -p /wikispeech/bin
 
 
 ###### BUILD INFO
-RUN echo -n "Build timestamp: " > /wikispeech/.wikispeech_base_build_info.txt
-RUN date --utc "+%Y-%m-%d %H:%M:%S %Z" >> /wikispeech/.wikispeech_base_build_info.txt
-RUN echo "Built by: docker" >> /wikispeech/.wikispeech_base_build_info.txt
-RUN echo "Application name: marytts"  >> /wikispeech/.wikispeech_base_build_info.txt
-
+ENV BUILD_INFO_FILE /wikispeech/.wikispeech_base_build_info.txt
+RUN echo -n "Build timestamp: " > $BUILD_INFO_FILE
+RUN date --utc "+%Y-%m-%d %H:%M:%S %Z" >> $BUILD_INFO_FILE
+RUN echo "Built by: docker" >> $BUILD_INFO_FILE
+RUN echo "Application name: wikispeech_base"  >> $BUILD_INFO_FILE
+#RUN echo -n "Git release: " >> $BUILD_INFO_FILE
+#RUN cd $GIT_REPO && git describe --tags >> $BUILD_INFO_FILE
+#RUN echo -n "Git timestamp: " >> $BUILD_INFO_FILE
+#RUN cd $GIT_REPO && git log -1 "--pretty=format:%ad %h" "--date=format:%Y-%m-%d %H:%M:%S %z" >> $BUILD_INFO_FILE
 
 WORKDIR "/"
