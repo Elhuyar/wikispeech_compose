@@ -47,14 +47,18 @@ RUN mkdir -p /wikispeech/bin
 
 
 ###### BUILD INFO
+RUN mkdir -p /wikispeech
+WORKDIR /wikispeech
 ENV BUILD_INFO_FILE /wikispeech/.wikispeech_base_build_info.txt
+RUN git clone https://github.com/stts-se/wikispeech_compose.git
+WORKDIR /wikispeech/wikispeech_compose
 RUN echo -n "Build timestamp: " > $BUILD_INFO_FILE
 RUN date --utc "+%Y-%m-%d %H:%M:%S %Z" >> $BUILD_INFO_FILE
 RUN echo "Built by: docker" >> $BUILD_INFO_FILE
 RUN echo "Application name: wikispeech_base"  >> $BUILD_INFO_FILE
-#RUN echo -n "Git release: " >> $BUILD_INFO_FILE
-#RUN cd $GIT_REPO && git describe --tags >> $BUILD_INFO_FILE
-#RUN echo -n "Git timestamp: " >> $BUILD_INFO_FILE
-#RUN cd $GIT_REPO && git log -1 "--pretty=format:%ad %h" "--date=format:%Y-%m-%d %H:%M:%S %z" >> $BUILD_INFO_FILE
+RUN echo -n "Git release: " >> $BUILD_INFO_FILE
+RUN git describe --tags >> $BUILD_INFO_FILE || echo "undefined" >> $BUILD_INFO_FILE
+RUN echo -n "Git timestamp: " >> $BUILD_INFO_FILE
+RUN git log -1 "--pretty=format:%ad %h" "--date=format:%Y-%m-%d %H:%M:%S %z" >> $BUILD_INFO_FILE
 
 WORKDIR "/"
