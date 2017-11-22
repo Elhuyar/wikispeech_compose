@@ -5,5 +5,5 @@ services:
   pronlex:
     image: "sttsse/pronlex:$RELEASE"
     volumes:
-     - ${LEXDATA_DIR}:/appdir
-    command: ["/wikispeech/bin/import_all", "/appdir", "${LEXDATA_DIR}"]
+     - ${LEXDATA_DIR}:/wikispeech/appdir
+    command: ["/wikispeech/bin/import_all", "/wikispeech/appdir", "${LEXDATA_DIR}"]
