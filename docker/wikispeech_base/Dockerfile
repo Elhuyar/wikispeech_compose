@@ -58,7 +58,5 @@ RUN echo "Built by: docker" >> $BUILD_INFO_FILE
 RUN echo "Application name: wikispeech_base"  >> $BUILD_INFO_FILE
 RUN echo -n "Git release: " >> $BUILD_INFO_FILE
 RUN git describe --tags >> $BUILD_INFO_FILE || echo "undefined" >> $BUILD_INFO_FILE
-RUN echo -n "Git timestamp: " >> $BUILD_INFO_FILE
-RUN git log -1 "--pretty=format:%ai %h" >> $BUILD_INFO_FILE
 
 WORKDIR "/"
