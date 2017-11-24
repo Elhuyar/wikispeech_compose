@@ -4,7 +4,7 @@ version: '3'
 services:
   pronlex:
     build: https://github.com/stts-se/pronlex.git
-    image: "pronlex"
+    image: "pronlex-dev"
     volumes:
      - ${LEXDATA_DIR}:/wikispeech/appdir
     command: ["/wikispeech/bin/import_all", "/wikispeech/appdir", "${LEXDATA_DIR}"]

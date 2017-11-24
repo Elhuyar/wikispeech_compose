@@ -14,7 +14,7 @@ services:
 
   pronlex:
     build: https://github.com/stts-se/pronlex.git
-    image: "pronlex"
+    image: "pronlex-dev"
     #image: "sttsse/pronlex:$RELEASE"
     volumes:
      - ${LEXDATA_DIR}:/wikispeech/appdir
@@ -28,7 +28,7 @@ services:
 
   marytts:
     build: https://github.com/HaraldBerthelsen/marytts.git
-    image: "marytts"
+    image: "marytts-dev"
     #image: "sttsse/marytts:$RELEASE"
     ports:
       - "59125:59125"
@@ -40,7 +40,7 @@ services:
 
   wikispeech:
     build: https://github.com/stts-se/wikispeech_mockup.git
-    image: "wikispeech"
+    image: "wikispeech-dev"
     #image: "sttsse/wikispeech:$RELEASE"
     ports:
      - "10000:10000"
