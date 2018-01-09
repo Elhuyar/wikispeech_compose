@@ -1,0 +1,29 @@
+1) make release tag (mk_release.sh)
+
+2) build and publish docker images
+
+cd ~/git_repos/wikispeech_compose/docker/wikispeech_base
+docker build --no-cache . -t sttsse/wikispeech_base:v0.3.0beta2
+docker build . -t sttsse/wikispeech_base
+
+cd ~/git_repos/marytts
+docker build --no-cache . -t sttsse/marytts:v0.3.0beta2
+#docker build . -t sttsse/marytts
+
+cd ~/git_repos/wikispeech_mockup
+docker build --no-cache . -t sttsse/wikispeech:v0.3.0beta2
+#docker build . -t sttsse/wikispeech
+
+cd ~/go/src/github.com/stts-se/pronlex/
+docker build --no-cache . -t sttsse/pronlex:v0.3.0beta2
+#docker build . -t sttsse/pronlex
+
+docker push sttsse/wikispeech_base:v0.3.0beta2
+docker push sttsse/marytts:v0.3.0beta2
+docker push sttsse/wikispeech:v0.3.0beta2
+docker push sttsse/pronlex:v0.3.0beta2
+
+#docker push sttsse/wikispeech_base
+#docker push sttsse/marytts
+#docker push sttsse/wikispeech
+#docker push sttsse/pronlex
