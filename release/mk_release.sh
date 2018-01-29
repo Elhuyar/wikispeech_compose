@@ -1,4 +1,4 @@
-TAG="0.3.0beta2"
+TAG="0.3.0beta3"
 
 GOHOME="$HOME/go/src/github.com/stts-se"
 GITHOME="$HOME/git_repos"

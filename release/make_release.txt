@@ -1,29 +1,35 @@
-1) make release tag (mk_release.sh)
+1) make release tag (see non-workning script mk_release.sh)
 
-2) build and publish docker images
+2) update release info on github (5 repositories)
+
+3) build and publish docker images
 
 cd ~/git_repos/wikispeech_compose/docker/wikispeech_base
-docker build --no-cache . -t sttsse/wikispeech_base:v0.3.0beta2
+docker build --no-cache . -t sttsse/wikispeech_base:version-0.3.0beta3
 docker build . -t sttsse/wikispeech_base
 
 cd ~/git_repos/marytts
-docker build --no-cache . -t sttsse/marytts:v0.3.0beta2
+docker build --no-cache . -t sttsse/marytts:version-0.3.0beta3
 #docker build . -t sttsse/marytts
 
 cd ~/git_repos/wikispeech_mockup
-docker build --no-cache . -t sttsse/wikispeech:v0.3.0beta2
+docker build --no-cache . -t sttsse/wikispeech:version-0.3.0beta3
 #docker build . -t sttsse/wikispeech
 
 cd ~/go/src/github.com/stts-se/pronlex/
-docker build --no-cache . -t sttsse/pronlex:v0.3.0beta2
+docker build --no-cache . -t sttsse/pronlex:version-0.3.0beta3
 #docker build . -t sttsse/pronlex
 
-docker push sttsse/wikispeech_base:v0.3.0beta2
-docker push sttsse/marytts:v0.3.0beta2
-docker push sttsse/wikispeech:v0.3.0beta2
-docker push sttsse/pronlex:v0.3.0beta2
+#?? - what about the automated builds?
+#docker push sttsse/wikispeech_base:version-0.3.0beta3
+#docker push sttsse/marytts:version-0.3.0beta3
+#docker push sttsse/wikispeech:version-0.3.0beta3
+#docker push sttsse/pronlex:version-0.3.0beta3
 
 #docker push sttsse/wikispeech_base
 #docker push sttsse/marytts
 #docker push sttsse/wikispeech
 #docker push sttsse/pronlex
+
+
+4) update release info in stts-se.github.io/wikispeech
