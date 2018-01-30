@@ -17,7 +17,7 @@ fi
 echo "pronlex folder: $pronlex"
 
 echo "starting pronlex"
-cd $pronlex/ && nohup sh install/start_server.sh ~/wikispeech/standalone &> pronlex.log &
+cd $pronlex/ && nohup bash install/start_server.sh ~/wikispeech/standalone &> pronlex.log &
 
 echo "starting mishkal"
 cd $gitrepos/mishkal/ && nohup python interfaces/web/mishkal-webserver.py &> mishkal.log &
@@ -26,7 +26,7 @@ echo "starting marytts"
 cd $gitrepos/marytts && nohup ./gradlew run &> marytts.log &
 
 echo "clearing wikispeech audio cache"
-cd $gitrepos/wikispeech_mockup && sh clear_audio_cache.sh -q || exit 1
+cd $gitrepos/wikispeech_mockup && bash clear_audio_cache.sh -q || exit 1
 
 sleep=60
 echo "waiting $sleep secs before starting main wikispeech server"
