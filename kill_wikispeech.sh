@@ -12,8 +12,6 @@ for proc in `ps $psargs | egrep "$processNames|PID" | sed 's/-cp .*//' | egrep -
     pids="$pids $pid"
 done
 
-#echo $pids
-
 nPids="`echo $pids | tr ' ' '\012' | egrep -v "^$" | wc -l`"
 if [ $nPids -ne 0 ]; then
     ps -Af --sort pid | egrep "PID|$processNames" | sed 's/-cp .*//' | egrep -v "grep .E" | egrep -v "$cmd" 2>&1
