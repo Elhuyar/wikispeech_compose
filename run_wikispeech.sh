@@ -1,4 +1,4 @@
-gitrepos=`ls $HOME/ $HOME/* | egrep "^(git|git_repos|gitrepos)$" | head -1 | sed "s|^|$HOME/|"`
+gitrepos=`ls -d $HOME/git* $HOME/private/git* 2> >(grep -v 'No such file' >&2) | egrep "(git|git_repos|gitrepos)$" | head -1`
 if [ $gitrepos ]; then
     echo "gitrepos folder: $gitrepos"
 else
@@ -6,21 +6,15 @@ else
     exit 1
 fi
 
-pronlex=`find $gitrepos -regex ".*pronlex"`
+pronlex=`ls -d $gitrepos/pronlex ~/go/src/github.com/stts-se/pronlex 2> >(grep -v 'No such file' >&2) | egrep pronlex$`
 
 if [ $pronlex ]; then
     echo -n ""
 else
-    pronlex=`find $HOME/go -regex ".*src.*pronlex"`
-    if [ $pronlex ]; then
-	echo -n ""
-    else
-	echo "No pronlex folder found!"
-	exit 1
-    fi
+    echo "No pronlex folder found!"
+    exit 1
 fi
 echo "pronlex folder: $pronlex"
-
 
 echo "starting pronlex"
 cd $pronlex/ && nohup sh install/start_server.sh ~/wikispeech/standalone &> pronlex.log &
