@@ -27,7 +27,7 @@ services:
      - "localhost:172.91.0.1"
 
   marytts:
-    build: https://github.com/HaraldBerthelsen/marytts.git
+    build: https://github.com/stts-se/marytts.git
     image: "marytts-dev"
     #image: "sttsse/marytts:$RELEASE"
     ports:
