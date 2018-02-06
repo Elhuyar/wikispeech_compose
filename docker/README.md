@@ -49,7 +49,7 @@ The setup here will use Docker images released on [Docker Hub](https://hub.docke
    Shutdown the wikispeech server if it's running:   
    `docker$ docker-compose --file wikispeech.yml down`
    
-   Import (this will take some time):    
+   Import:    
    `docker$ docker-compose --file pronlex-import-all.yml up`
    
    Start server:   
