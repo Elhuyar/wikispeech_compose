@@ -1,6 +1,8 @@
 services:
  - docker
- 
+
+sudo: required
+
 before_script:
  # fail on any non-zero exit value
  - set -e
