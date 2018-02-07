@@ -9,7 +9,7 @@ createReleaseTag() {
     declare -a repos=("$GOHOME/pronlex" "$GITHOME/wikispeech_mockup" "$GITHOME/wikispeech_compose" "$GITHOME/marytts" "$GITHOME/ws-lexdata")
     
     shorttag="v$TAG"
-    longtag="version $TAG"
+    longtag=$shorttag
     tagcmd="git tag -a $shorttag -m \"$longtag\""
     pushcmd="git push origin $shorttag"
 
@@ -30,24 +30,24 @@ buildDockerImages() {
     
     echo "    cd ~/git_repos/wikispeech_compose/docker/wikispeech_base &&
     docker build $cache . -t sttsse/wikispeech_base &&
-    docker build $cache . -t sttsse/wikispeech_base:version-$TAG &&
+    docker build $cache . -t sttsse/wikispeech_base:$shorttag &&
     
     cd ~/git_repos/marytts &&
-    docker build $cache . -t sttsse/marytts:version-$TAG &&
+    docker build $cache . -t sttsse/marytts:$shorttag &&
     
     cd ~/git_repos/wikispeech_mockup && 
-    docker build $cache . -t sttsse/wikispeech:version-$TAG &&
+    docker build $cache . -t sttsse/wikispeech:$shorttag &&
     
     cd ~/go/src/github.com/stts-se/pronlex/ &&
-    docker build $cache . -t sttsse/pronlex:version-$TAG
+    docker build $cache . -t sttsse/pronlex:$shorttag
 
     ### PAUSE ###
     
     docker push sttsse/wikispeech_base &&
-    docker push sttsse/wikispeech_base:version-$TAG &&
-    docker push sttsse/marytts:version-$TAG &&
-    docker push sttsse/wikispeech:version-$TAG &&
-    docker push sttsse/pronlex:version-$TAG"
+    docker push sttsse/wikispeech_base:$shorttag &&
+    docker push sttsse/marytts:$shorttag &&
+    docker push sttsse/wikispeech:$shorttag &&
+    docker push sttsse/pronlex:$shorttag"
 
     echo "" && echo ""
 }
