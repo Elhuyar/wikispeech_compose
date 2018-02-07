@@ -18,14 +18,14 @@ createReleaseTag() {
 	if [ $repo != ${repos[-1]} ]; then
 	    cmd="$cmd && "
 	fi
-	echo $cmd
+	echo "    $cmd"
     done
     echo ""
 }
 
 buildDockerImages() {
     echo "(2) COMMANDS FOR GENERATING AND PUBLISHING DOCKER IMAGES"
-    echo " >> SHOULD BE RUN AUTOMATICALLY BY https://cloud.docker.com -- PLEASE VERIFY"
+    echo " >> Should be run automatically by https://cloud.docker.com -- please verify"
     echo ""
     
     # echo "    cd ~/git_repos/wikispeech_compose/docker/wikispeech_base &&
@@ -49,10 +49,19 @@ buildDockerImages() {
     # echo "" && echo "" && echo ""
 }
 
+echo "RELEASE TAG: $TAG"
+
 createReleaseTag
 buildDockerImages
 
-echo "(3) CREATE RELEASE NOTES: Add release notes to stts-se.github.io/wikispeech/release_notes.html"
+echo "(3) CREATE RELEASE NOTES"
+echo " >> Add release notes to stts-se.github.io/wikispeech/release_notes.html"
 echo ""
+
 echo "(4) LINK RELEASE NOTES: Link release notes for all five repos on github.com"
 echo " >> http://stts-se.github.io/wikispeech/release_notes.html#v$TAG"
+echo ""
+
+echo "(5) RESTART MORF SERVERS"
+echo " >> Restart, retrieve docker updates and make sure all servers start without errors"
+echo ""
