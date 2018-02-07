@@ -79,7 +79,7 @@ else
 		    echo "[$CMD] $match removed "
 		else
 		    echo "[$CMD] Couldn't stop&remove $pretty " 2>&1
-		    exit 1
+		    #exit 1
 		fi
 	    done
 	fi
