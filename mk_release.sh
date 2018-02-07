@@ -1,4 +1,11 @@
-TAG="0.3.0beta4"
+
+if [ $# -ne 1 ]; then
+    echo "USAGE: mk_release.sh <release-tag>"
+    exit 1
+fi
+
+#TAG="0.3.0beta4"
+TAG=$1
 
 createReleaseTag() {
     echo ""
@@ -24,8 +31,8 @@ createReleaseTag() {
 }
 
 buildDockerImages() {
-    #cache="--no-cache"
-    cache=""
+    cache="--no-cache"
+    #cache=""
     echo "(2) COMMANDS FOR GENERATING AND PUBLISHING DOCKER IMAGES"
     
     echo "    cd ~/git_repos/wikispeech_compose/docker/wikispeech_base &&
