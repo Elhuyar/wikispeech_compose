@@ -46,6 +46,8 @@ The setup here will use Docker images released on [Docker Hub](https://hub.docke
    
 4. Setup standard lexicon data (optional)
 
+   Import standard lexicon data for Swedish, Norwegian, US English, and a small set of test data for Arabic.
+
    Shutdown the wikispeech server if it's running:   
    `docker$ docker-compose --file wikispeech.yml down`
    
@@ -53,7 +55,7 @@ The setup here will use Docker images released on [Docker Hub](https://hub.docke
    `docker$ docker-compose --file pronlex-import-all.yml up`
    
    Start server:   
-   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`
+   `docker$ docker-compose --file wikispeech.yml up --abort-on-container-exit`   
    
 5. Fetch updated images from Docker Hub (for the release tag speficied in `.env`)
 
