@@ -5,7 +5,9 @@ if [ $# -ne 1 ]; then
 fi
 
 #TAG="0.3.0beta4"
-TAG=$1
+TAG=`echo $1 | sed 's/^\([^v]\)/v\1/'`
+shorttag=$TAG
+longtag=$shorttag
 
 createReleaseTag() {
     echo ""
@@ -15,8 +17,6 @@ createReleaseTag() {
     
     declare -a repos=("$GOHOME/pronlex" "$GITHOME/wikispeech_mockup" "$GITHOME/wikispeech_compose" "$GITHOME/marytts" "$GITHOME/ws-lexdata")
     
-    shorttag="v$TAG"
-    longtag=$shorttag
     tagcmd="git tag -a $shorttag -m \"$longtag\""
     pushcmd="git push origin $shorttag"
 
