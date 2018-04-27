@@ -59,4 +59,8 @@ RUN echo "Built by: docker" >> $BUILD_INFO_FILE
 RUN echo -n "Git release: " >> $BUILD_INFO_FILE
 RUN git describe --tags >> $BUILD_INFO_FILE || echo "undefined" >> $BUILD_INFO_FILE
 
+# TODO: remove wikispeech_compose?!!!
+# WORKDIR /wikispeech
+# RUN rm -rf wikispeech_compose
+
 WORKDIR "/"
