@@ -36,17 +36,17 @@ buildDockerImages() {
     echo "(2) COMMANDS FOR GENERATING AND PUBLISHING DOCKER IMAGES"
     
     echo "    cd ~/git_repos/wikispeech_compose/docker/wikispeech_base &&
-    docker build $cache . -t sttsse/wikispeech_base &&
-    docker build $cache . -t sttsse/wikispeech_base:$shorttag &&
+    docker build --build-arg RELEASE=$TAG $cache . -t sttsse/wikispeech_base &&
+    docker build --build-arg RELEASE=$TAG $cache . -t sttsse/wikispeech_base:$shorttag &&
     
     cd ~/git_repos/marytts &&
-    docker build $cache . -t sttsse/marytts:$shorttag &&
+    docker build --build-arg RELEASE=$TAG $cache . -t sttsse/marytts:$shorttag &&
     
     cd ~/git_repos/wikispeech_mockup && 
-    docker build $cache . -t sttsse/wikispeech:$shorttag &&
+    docker build --build-arg RELEASE=$TAG $cache . -t sttsse/wikispeech:$shorttag &&
     
     cd ~/go/src/github.com/stts-se/pronlex/ &&
-    docker build $cache . -t sttsse/pronlex:$shorttag
+    docker build --build-arg RELEASE=$TAG $cache . -t sttsse/pronlex:$shorttag
 
     ### PAUSE ###
     
